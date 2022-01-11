@@ -1,0 +1,42 @@
+
+<div class="row g-3">
+
+    <div class="col-md-6">
+        <label for="nombreProfesor" class="form-label">Nombre del profesor</label>
+        <input type="text" class="form-control" id="nombreProfesor"
+               placeholder="Ejemplo: Eduardo Cepero Matamoros" required>
+
+        <div class="invalid-feedback">
+            Se requiere el Nombre del profesor.
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <label for="evaluacionProfesor" class="form-label">Evaluaci&oacute;n</label>
+        <input type="number" class="form-control" id="evaluacionProfesor"
+               min="0" max="500"
+               onkeydown="javascript: return event.keyCode === 8 || event.keyCode === 46 ? true : !isNaN(Number(event.key))" class="form-control"
+               placeholder="Ejemplo: 5" required>
+
+        <div class="invalid-feedback">
+            Se requiere la Evaluaci&oacute;n (solo n&uacute;meros).
+        </div>
+    </div>
+</div>
+
+<hr class="my-4">
+
+<!--Aceptar, Cancelar Buttons-->
+<div class="row gy-3">
+    <div class="col-md-3"></div>
+    <div class="col-md-3"></div>
+    <div class="col-md-3">
+        <button  type="button" onclick="cancelform();" class="w-100 btn btn-secondary btn-lg btn-cancel">Cancelar</button>
+    </div>
+    <div class="col-md-3">
+        <button id="submmit1" class="w-100 btn btn-primary btn-lg"
+                type="submit">Aceptar</button>
+    </div>
+</div>
+
+

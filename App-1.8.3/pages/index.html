@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Rosa, Yunia, Melissa, Gambou Claire">
+    <meta name="generator" content="">
+
+    <title>Sistema de Gesti&oacute;n de Procesos</title>
+
+    <script src="../js/access.js"></script>
+    <link href= "../lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+
+    <link href= "../css/signin.css" rel="stylesheet">
+
+    <script src= "../lib/jquery-3.6.0.min.js"></script>
+
+  </head>
+
+  <body class="text-center">
+
+    <main class="form-signin">
+      <h2 class="h3 mb-3 fw-normal">Departamento de Inform&aacute;tica</h2>
+      <h2 class="h3 mb-3 fw-normal">Facultad 2</h2>
+      <form id="frmLogin" action="" class="needs-validation" novalidate>
+
+        <img class="mb-4" src= "../image/dif2-logo.gif" alt="" width="170" height="100">
+
+        <h1 class="h3 mb-3 fw-normal">Bienvenido</h1>
+
+        <div class="form-floating">
+          <input type="text" class="form-control" id="txtUser"
+                 placeholder="Usuario" required>
+          <label for="txtUser">Usuario</label>
+
+          <div class="invalid-feedback">
+            Especifique el nombre de usuario.
+          </div>
+        </div>
+
+        <div class="form-floating">
+          <input type="password" class="form-control" id="txtPass"
+                 maxlength="10"
+                 placeholder="Contrase&ntilde;a" required>
+          <label for="txtPass">Contrase&ntilde;a</label>
+
+          <div class="invalid-feedback">
+            Especifique la contrase&ntilde;a.
+          </div>
+        </div>
+
+        <div class="checkbox mb-3">
+          <label>
+            <input type="checkbox" value="remember-me"> Recordar
+          </label>
+        </div>
+
+        <button id="btnOk" class="w-100 btn btn-lg btn-primary" type="button">Entrar</button>
+
+        <p class="mt-5 mb-3 text-muted">&copy2021-2022</p>
+
+      </form>
+    </main>
+
+<!--Modals-->
+    <div class="modal fade" id="modalWindow" data-bs-backdrop="static"
+         data-bs-keyboard="false" tabindex="-1"
+         aria-labelledby="modal-title" aria-hidden="true">
+
+      <div class="modal-dialog">
+        <div class="modal-content">
+
+          <div class="modal-header">
+            <h5 class="modal-title" id="modal-title">Mensaje</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+
+          <div class="modal-body">
+            <p id="modal-description">
+                <!--    Aqui va el mensaje deseado   -->
+            </p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Aceptar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+<!---->
+
+  <script src= "../lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src= "../js/validate-forms.js"></script>
+
+  </body>
+</html>

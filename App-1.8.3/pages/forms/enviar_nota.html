@@ -1,0 +1,52 @@
+
+<div class="row g-3">
+
+    <div class="col-12">
+        <label for="nombre" class="form-label">Nombre del estudiante</label>
+        <input type="text" class="form-control" id="nombre"
+               placeholder="Ejemplo: Eduardo Cepero Matamoros" required>
+
+        <div class="invalid-feedback">
+            Se requiere el Nombre del estudiante.
+        </div>
+    </div>
+
+    <div class="col-12">
+        <label for="lugar" class="form-label">Tipo de evaluaci&oacute;n</label>
+        <input type="text" class="form-control" id="lugar"
+               placeholder="Ejemplos: Seminario, Prueba Parcial, Pregunta Escrita, etc." required>
+
+        <div class="invalid-feedback">
+            Se requiere el Tipo de evaluaci&oacute;n.
+        </div>
+    </div>
+
+    <div class="col-12">
+        <label for="notaEstudiante" class="form-label">Nota</label>
+        <input type="number" class="form-control" id="notaEstudiante"
+               min="0" max="500"
+               onkeydown="javascript: return event.keyCode === 8 || event.keyCode === 46 ? true : !isNaN(Number(event.key))" class="form-control"
+               placeholder="Ejemplo: 99.5" required>
+
+        <div class="invalid-feedback">
+            Se requiere la Nota (solo n&uacute;meros).
+        </div>
+    </div>
+
+</div>
+
+<hr class="my-4">
+
+<!--Aceptar, Cancelar Buttons-->
+<div class="row gy-3">
+    <div class="col-md-3"></div>
+    <div class="col-md-3"></div>
+    <div class="col-md-3">
+        <button type="button" onclick="cancelform();" class="w-100 btn btn-secondary btn-lg btn-cancel">Cancelar</button>
+    </div>
+    <div class="col-md-3">
+        <button id="submmit1" class="w-100 btn btn-primary btn-lg" type="submit">Aceptar</button>
+    </div>
+</div>
+
+

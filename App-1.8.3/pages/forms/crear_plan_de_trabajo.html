@@ -1,0 +1,88 @@
+<div class="row g-3">
+
+    <div class="col-12">
+        <label for="actividad" class="form-label">Actividad</label>
+
+        <textarea class="form-control" id="actividad" rows="3"
+                  value="" placeholder="Ejemplo: Reuni&oacute;n de puntualizaci&oacute;n..." required></textarea>
+
+        <div class="invalid-feedback">
+            Especifique la descripcion de la actividad.
+        </div>
+    </div>
+
+    <div class="col-12">
+        <label for="address2" class="form-label">Lugar<span class="text-muted">(Optional)</span></label>
+        <input type="text" class="form-control" id="address2"
+               placeholder="Ejemplo: Oficina del director..." required>
+
+        <div class="invalid-feedback">
+            Se requiere el Lugar.
+        </div>
+    </div>
+
+    <!--<div class="col-md-5">
+        <label for="datepicker" class="form-label">Fecha</label>
+
+        <div class="input-group date" id="datepicker">
+            <input type="text" class="form-control" required>
+            <div class="invalid-feedback">
+                Se requiere la fecha.
+            </div>
+            <span class="input-group-append">
+                            <span class="input-group-text bg-white d-block">
+                                <i class="fa fa-calendar"></i>
+                            </span>
+                        </span>
+        </div>
+    </div>-->
+
+    <div class="col-md-5">
+        <label for="fecha" class="form-label">Fecha</label>
+        <input type="date" min="2022-01-01" max="2022-12-31"
+               value="2022-01-01"
+               class="form-control" id="fecha"
+               required>
+
+        <div class="invalid-feedback">
+            Se requiere la fecha.
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <label for="horaInicial" class="form-label">Hora inicial</label>
+
+        <input type="time" class="form-control" id="horaInicial" name="horaInicial"
+              required>
+
+        <div class="invalid-feedback">
+            Se requiere la hora inicial.
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <label for="horaFinal" class="form-label">Hora final</label>
+
+        <input type="time" class="form-control" id="horaFinal" name="horaFinal"
+               required>
+
+        <div class="invalid-feedback">
+            Se requiere la hora final.
+        </div>
+    </div>
+</div>
+
+<hr class="my-4">
+
+<div class="row gy-3">
+    <div class="col-md-3"></div>
+    <div class="col-md-3"></div>
+    <div class="col-md-3">
+        <button id="btnCancel" onclick="cancelform();" type="button"
+                class="w-100 btn btn-secondary btn-lg btn-cancel">
+            Cancelar</button>
+    </div>
+    <div class="col-md-3">
+        <button id="submmit1" class="w-100 btn btn-primary btn-lg" type="submit">Aceptar</button>
+    </div>
+</div>

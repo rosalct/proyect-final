@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Rosa, Yunia, Melissa, Gambou Claire">
+    <meta name="generator" content="">
+    <title>Sistema de Gesti&oacute;n de Procesos - Jefe de asignatura</title>
+
+    <script>
+        var sessionUsuario = sessionStorage.getItem('AppDIF2.usuario');
+        // redireccionar a la pagina del usuario autenticado
+        if (sessionUsuario != null && sessionUsuario != '') {
+            switch (sessionUsuario) {
+                case 'prof':
+                case 'jefdep':
+                    redirect(sessionUsuario);
+                    break;
+                case 'jefasig':
+                    break;
+                default:
+                    redirect('index');
+                    break;
+            }
+        } else {
+            redirect('index');
+        }
+
+        /**
+         * Redirecciona a una pagina HTML dado su nombre de archivo.
+         * @param agPage
+         */
+        function redirect(agPage) {
+            window.location.href = "./" + agPage + ".html";
+        }
+    </script>
+
+    <link href="../lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../lib/bootstrap/plugins/bootstrap-datepicker.min.css">
+    <link rel="stylesheet" href="../lib/bootstrap/plugins/font-awesome.min.css">
+
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+    </style>
+
+    <link href="../css/main.css" rel="stylesheet">
+    <script src="../lib/jquery-3.6.0.min.js"></script>
+    <script src="../js/main.js"></script>
+
+</head>
+<body>
+
+<!--  header content-->
+<header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
+
+    <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="./jefasig.html">Sistema de Gestión de Procesos</a>
+
+    <button class="navbar-toggler position-absolute d-md-none collapsed"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#sidebarMenu"
+            aria-controls="sidebarMenu"
+            aria-expanded="false"
+            aria-label="Toggle navigation">
+
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <nav class="py-2 bg-dark">
+        <div class="container d-flex flex-wrap">
+            <ul class="nav">
+                <li class="nav-item">
+                    <a id="btnSalir" href="#" class="nav-link px-2" style="font-size: large; color: #ffffff">
+                        <span data-feather="log-out" class="help-icon"></span>Salir
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="./help.html" class="nav-link px-2" style="font-size: large; color: #ffffff">
+                        <span data-feather="help-circle" class="help-icon"></span>Ayuda
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+</header>
+
+<!--body-->
+<div class="container-fluid">
+
+    <div class="row">
+
+        <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+
+            <div class="position-sticky pt-3">
+                <!--Plan de trabajo-->
+                <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+                    <span>Plan de trabajo</span>
+                    <a class="link-secondary" href="#" aria-label="Add a new report">
+                        <span data-feather="plus-circle"></span>
+                    </a>
+                </h6>
+
+                <ul class="nav flex-column mb-2">
+                    <li class="nav-item">
+                        <a id="btnCrearPlan" class="nav-link" href="#">
+                            <span data-feather="file-text"></span>
+                            Crear plan de trabajo
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a id="btnModificarPlanTrabajo" class="nav-link" href="#">
+                            <span data-feather="file-text"></span>
+                            Modificar plan de trabajo
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a id="btnEliminarPlanTrabajo" class="nav-link" href="#">
+                            <span data-feather="file-text"></span>
+                            Eliminar plan de trabajo
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a id="btnBuscarPlanTrabajo" class="nav-link" href="#">
+                            <span data-feather="file-text"></span>
+                            Buscar plan de trabajo
+                        </a>
+                    </li>
+                </ul>
+
+                <!--Plan de clases-->
+                <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+                    <span>Plan de clases</span>
+                    <a class="link-secondary" href="#" aria-label="Add a new report">
+                        <span data-feather="plus-circle"></span>
+                    </a>
+                </h6>
+
+                <ul class="nav flex-column mb-2">
+                    <li class="nav-item">
+                        <a id="btnCrearPlanClases" class="nav-link" href="#">
+                            <span data-feather="file-text"></span>
+                            Crear plan de clases
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a id="btnModificarPlanClases" class="nav-link" href="#">
+                            <span data-feather="file-text"></span>
+                            Modificar plan de clases
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a id="btnEliminarPlanClases" class="nav-link" href="#">
+                            <span data-feather="file-text"></span>
+                            Eliminar plan de clases
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a id="btnMostrarPlanClases" class="nav-link" href="#">
+                            <span data-feather="file-text"></span>
+                            Mostrar plan de clases
+                        </a>
+                    </li>
+                </ul>
+                <!--Generales-->
+                <h6 class="sidebar-heading d-flex justify-content-between
+        align-items-center px-3 mt-4 mb-1 text-muted">
+                    <span>Generales</span>
+                    <a class="link-secondary" href="#" aria-label="Add a new report">
+                        <span data-feather="plus-circle"></span>
+                    </a>
+                </h6>
+
+                <li class="nav-item">
+                    <a id="evaluarProfesor" class="nav-link" href="#">
+                        <span data-feather="file-text"></span>
+                        Evaluar Profesor
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a id="controlarLasClases" class="nav-link" href="#">
+                        <span data-feather="file-text"></span>
+                        Controlar las Clases
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a id="enviarNota" class="nav-link" href="#">
+                        <span data-feather="file-text"></span>
+                        Enviar Notas
+                    </a>
+                </li>
+                </ul>
+
+            </div>
+        </nav>
+
+        <!--main-->
+        <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+            <div class="bg-light border rounded-3" style="padding: 2rem">
+                <h4 id="headTextRequest" class="mb-3"></h4>
+
+                <form id="rightPanel" class="needs-validation" novalidate>
+                    <p style="font-size: large"><i>"Educar es depositar en cada hombre toda la obra humana que le ha
+                        antecedido, es hacer a cada hombre resumen del mundo viviente, hasta el d&iacute;a en que vive,
+                        es ponerlo al nivel de su tiempo, para que flote sobre &eacute;l, y no dejarlo debajo de su
+                        tiempo, con lo que no podr&aacute; salir a flote; es preparar al hombre para la vida." (Jos&eacute;
+                        Mart&iacute;. Escuela de electricidad. O.C.T.B, p&aacute;gina 282).</i></p>
+
+                </form>
+            </div>
+        </main>
+    </div>
+</div>
+
+<!--Modals-->
+<div class="modal fade" id="modalWindow" data-bs-backdrop="static"
+     data-bs-keyboard="false" tabindex="-1"
+     aria-labelledby="modal-title" aria-hidden="true">
+
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h5 class="modal-title" id="modal-title">Mensaje</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+
+            <div class="modal-body">
+                <p id="modal-description">
+                    <!--    Aqui va el mensaje deseado   -->
+                </p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Aceptar</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!---->
+
+<!--scripts-->
+<script src="../lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="../lib/father-icons/feather.min.js"></script>
+<script src="../lib/bootstrap/plugins/bootstrap-datepicker.min.js"></script>
+
+</body>
+</html>
